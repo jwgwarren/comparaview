@@ -9,7 +9,7 @@ def index(request):
     return HttpResponse("Welcome to your app home-page2!")
 
 @login_required()
-def stack_preview (request, imageId, conn=None, **kwargs):
+def compare (request, imageId, conn=None, **kwargs):
     """ Shows a subset of Z-planes for an image """
     image = conn.getObject("Image", imageId)       # Get Image from OMERO
     image_name = image.getName()
