@@ -6,7 +6,7 @@
      <h1>blah {{ image_name }}</h1>
 
      {% for z in z_indexes %}
-         <img src="{% url 'webgateway.views.render_image' imageId z 0 %}"
+         <img src="{% url 'webgateway.views.img_detail' imageId z 0 %}"
              style="max-width: 200px; max-height:200px"/>
      {% endfor %}
 </body>
