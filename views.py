@@ -4,4 +4,4 @@ def index(request):
     """
     Just a place-holder while we get started
     """
-    return HttpResponse("Welcome to your app home-page!")
+    return HttpResponse("Welcome to your app home-page2!")
