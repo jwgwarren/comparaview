@@ -1,4 +1,3 @@
-from django.conf.urls.defaults import *
 from omeroweb.comparaview import views
 
 urlpatterns = patterns('django.views.generic.simple',
