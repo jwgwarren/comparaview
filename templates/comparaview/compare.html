@@ -1,0 +1,13 @@
+<html>
+<head>
+     <title>Compare View</title>
+</head>
+<body>
+     <h1>{{ image_name }}</h1>
+
+     {% for z in z_indexes %}
+         <img src="{% url 'webgateway.views.render_image' imageId z 0 %}"
+             style="max-width: 200px; max-height:200px"/>
+     {% endfor %}
+</body>
+</html>
