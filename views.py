@@ -1,6 +1,12 @@
+from django.http import HttpResponse
 from omeroweb.webclient.decorators import login_required
 from django.shortcuts import render_to_response
 
+def index(request):
+    """
+    Just a place-holder while we get started
+    """
+    return HttpResponse("Welcome to your app home-page2!")
 
 @login_required()
 def stack_preview (request, imageId, conn=None, **kwargs):
