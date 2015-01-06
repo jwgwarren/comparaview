@@ -3,7 +3,7 @@
      <title>Compare View</title>
 </head>
 <body>
-     <h1>{{ image_name }}</h1>
+     <h1>blah {{ image_name }}</h1>
 
      {% for z in z_indexes %}
          <img src="{% url 'webgateway.views.render_image' imageId z 0 %}"
