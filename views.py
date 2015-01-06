@@ -17,7 +17,7 @@ def compare (request, imageId, conn=None, **kwargs):
     # 5 Z-planes
     z_indexes = [0, int(sizeZ*0.25),
              int(sizeZ*0.5), int(sizeZ*0.75), sizeZ-1]
-    return render_to_response('webtest/stack_preview.html',
+    return render_to_response('webtest/compare.html',
          {'imageId':imageId,
          'image_name':image_name,
          'z_indexes':z_indexes})
