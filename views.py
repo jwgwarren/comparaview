@@ -19,5 +19,4 @@ def compare (request, imageId, conn=None, **kwargs):
              int(sizeZ*0.5), int(sizeZ*0.75), sizeZ-1]
     return render_to_response('comparaview/compare.html',
          {'imageId':imageId,
-         'image_name':image_name,
-         'z_indexes':z_indexes})
+         'image_name':image_name})
