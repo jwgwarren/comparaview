@@ -13,10 +13,7 @@ def compare (request, imageId, conn=None, **kwargs):
     """ Shows a subset of Z-planes for an image """
     image = conn.getObject("Image", imageId)       # Get Image from OMERO
     image_name = image.getName()
-    sizeZ = image.getSizeZ()                        # get the Z size
-    # 5 Z-planes
-    z_indexes = [0, int(sizeZ*0.25),
-             int(sizeZ*0.5), int(sizeZ*0.75), sizeZ-1]
-    return render_to_response('comparaview/compare.html',
+    
+    return render_to_response('comparaview/omero_image.html',
          {'imageId':imageId,
          'image_name':image_name})
