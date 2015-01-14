@@ -1715,7 +1715,7 @@ def full_viewer (request, iid, conn=None, **kwargs):
              'viewport_server': kwargs.get('viewport_server', reverse('webgateway')).rstrip('/'),# remove any trailing slash
              'object': 'image:%i' % int(iid)}
 
-        template = kwargs.get('template', "webgateway/viewport/omero_image.html")
+        template = kwargs.get('template', "comparaview/omero_image.html")
         t = template_loader.get_template(template)
         c = Context(request,d)
         rsp = t.render(c)
