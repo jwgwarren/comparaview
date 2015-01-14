@@ -212,7 +212,8 @@
    */
   var _refresh_cb = function (ev, viewport) {
     /* Sync inputs with initial values */
-
+console.log('ev='+ev);
+    console.log('viewport='+veiwport);
     $('#wblitz-rmodel').attr('checked', !viewport.isGreyModel());
     $('#wblitz-invaxis').attr('checked', viewport.loadedImg.rdefs.invertAxis);
     //$('#rd-wblitz-rmodel').attr('checked', !viewport.isGreyModel());
