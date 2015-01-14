@@ -1140,14 +1140,14 @@ console.log('ev='+ev);
             <label for="wblitz-channels-box">Channels</label> - <a href="#" onclick="$('#rdef-postit').toggle(); return false;">Edit</a><br />
             <span id="wblitz-channels-box"></span>
           </div> -->
-          <div class="even row">
+          <!-- <div class="even row">
             <label for="wblitz-rmodel">Color</label>
             <input id="wblitz-rmodel" type="checkbox" onclick="viewport.setModel(this.checked?'c':'g');" />
-	    {% comment %}<!-- #8766 {% if not blitzcon.isAnonymous and image.canWrite %}
+	    {% comment %}#8766 {% if not blitzcon.isAnonymous and image.canWrite %}
 	    <br />
             <label for="wblitz-invaxis">Invert Z/T Axis</label>
             <input id="wblitz-invaxis" type="checkbox" onchange="viewport.setInvertedAxis(this.checked);" />
-	    {% endif %}-->{% endcomment %}
+	    {% endif %}{% endcomment %}
             <br />
             <label>Rendering Settings</label><br />
             <button class="btn silver btn_text copy_rdef" title="Copy Rendering Settings">
@@ -1161,14 +1161,14 @@ console.log('ev='+ev);
             <h1>Current Image</h1>
           <div class="even row">
             <span style="font-size: 0.9em">
-            <!--<span id="wblitz-shortname" style="white-space: nowrap;"></span><br />-->
+            <span id="wblitz-shortname" style="white-space: nowrap;"></span><br />
             Z: <span id="wblitz-z-curr">?</span>/<span id="wblitz-z-count">?</span> |
             T: <span id="wblitz-t-curr">1</span>/<span id="wblitz-t-count">1</span>
             </span>
           </div>
           <div class="odd row">
             <a href="#" onclick="$('#metadata-postit').toggle(); return false;">Image Information</a><br />
-          </div>
+          </div> -->
           <div class="even row">
                       <a href="#" onmouseover="this.href=viewport.getUrl('img_detail')"
                       onclick="show_image_link();
