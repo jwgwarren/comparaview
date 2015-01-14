@@ -64,13 +64,13 @@ def index(request):
     return HttpResponse("Welcome to your app home-page2!")
 
 @login_required()
-def compare (request, imageId, conn=None, **kwargs):
+def compare (request, iid, conn=None, **kwargs):
     """ Shows a subset of Z-planes for an image """
-    image = conn.getObject("Image", imageId)       # Get Image from OMERO
+    image = conn.getObject("Image", iid)       # Get Image from OMERO
     image_name = image.getName()
     
-    return render_to_response('comparaview/omero_image.html',
-         {'imageId':imageId,
+    return render_to_response('comparaview/compare.html',
+         {'iid':iid,
          'image_name':image_name})
     
 
