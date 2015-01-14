@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from omeroweb.webclient.decorators import login_required
 from django.shortcuts import render_to_response
+import omero
 
 def index(request):
     """
