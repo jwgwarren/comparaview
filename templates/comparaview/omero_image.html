@@ -1322,7 +1322,7 @@ console.log('ev='+ev);
     /* Load the selected image into the viewport */
     var did = '{{ dataset.id }}';
     viewport.setQuality('0.9');
-    viewport.load({{ 7780 }}, did.length ? parseInt(did) : null, location.search);
+    viewport.load('7780', did.length ? parseInt(did) : null, location.search);
 
     /* Bind actions needed on window resize */
     $(window).resize(calcResize);
