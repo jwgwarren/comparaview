@@ -12,19 +12,26 @@
 <link rel="stylesheet" href="{% static "webgateway/css/ome.gs_slider.css" %}" type="text/css" media="screen"/>
 <link rel="stylesheet" href="{% static "webgateway/css/ome.viewport.css" %}" type="text/css" media="screen"/>
 
-<script type="text/javascript">
+<link href="${baseUrl}/css/default.css" rel="stylesheet" type="text/css" />
+<script>
+var baseUrl="${baseUrl}";
+var solrUrl='${solrUrl}';
+var drupalBaseUrl = "${drupalBaseUrl}";
+var mediaBaseUrl = "${mediaBaseUrl}";
+var impcMediaBaseUrl="${impcMediaBaseUrl}";
+
 
 $(document).ready(function()
         {
 	//http://wwwdev.ebi.ac.uk/mi/media/omero/webgateway/
-            var viewport = $.WeblitzViewport($("#contviewport"), "../../../webgateway" );
+          /*   var viewport = $.WeblitzViewport($("#contviewport"), "../../../webgateway" );
             viewport.load({{ iid }});
             viewport.setZoom(200);
             
             var viewport2 = $.WeblitzViewport($("#expviewport"), "../../../webgateway" );
             viewport2.load({{ iid }});
             viewport2.setZoom(200);
-            
+ */            
             
      
            
@@ -34,43 +41,36 @@ $(document).ready(function()
 
 </script>
 </head>
-<body>
+
 	<h1>blah {{ iid }}</h1>
 
-	<div id="wholeScreen" style="width: 100%; overflow:auto;">
-		<div style="float: left; width: 50%; heigth: 100%;">
-			<div class="miniview" id="contviewport"></div>
-			<div class="block">
-				<div class="content">
-					<div class="section">
 
-						<div class="caption">
-							<div class="btn" id="prev">< < Previous</div>
-							<div class="btn" id="next">Next > ></div>
-							<div id="annotations" name="annotations"></div>
-						</div>
+ {% if ctrImgId|length==0 and expImgId|length==0 %}
+ 	<h1 class="title">No Images Selected - please select some experimental and/or control images to view.</h1>
+ {% elsif ctrlImgId|length >0 and expImgId|length >0 %}
+  <frameset cols="50%,50%">
+{% else %}
+ <frameset cols="100%">
+  
+ {% endif %}
+ 
+ {% if ctrImgId|length > 0 }">
+ <frameset rows=85%,15%>
+<frame name="control" id="control" src="${impcMediaBaseUrl}/img_detail/${param['ctrImgId']}/" name="top">
 
-					</div>
-				</div>
-			</div>
-		</div>
+<frame name="navControl" id="navControl" src="imageNavigator?controlOrExp=control"></frame>
+</frameset>
+{% endif %}
 
-		<div style="float: right; width: 50%; heigth: 100%;">
-			<div class="miniview" id="expviewport"></div>
-			<div class="block">
-				<div class="content">
-					<div class="section">
+ {% if expImgId|length >0 %}">
+<frameset rows=85%,15%>
+<frame name="experimental" id="experimental" src="${impcMediaBaseUrl}/img_detail/${param['expImgId']}/" name="top">
+<frame name="expControl" id="expControl" src="imageNavigator?controlOrExp=experimental"></frame>
+</frameset>
+{% endif %}
 
-						<div class="caption">
-							<div class="btn" id="prev">< < Previous</div>
-							<div class="btn" id="next">Next > ></div>
-							<div id="annotations" name="annotations"></div>
-						</div>
+</frameset>
 
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</body>
+
+
 </html>
