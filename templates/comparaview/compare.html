@@ -1,10 +1,23 @@
 <html>
 <head>
 <title>Compare View</title>
-<script type="text/javascript"></script>
+<script type="text/javascript">
+
+$(document).ready(function()
+        {
+            var viewport = $.WeblitzViewport($("#viewport"), "/comparaview" );
+            viewport.load(image_id);
+
+    });
+
+
+</script>
 </head>
 <body>
 	<h1>blah {{ iid }}</h1>
+	
+	<div class="miniview" id="viewport"></div>
+	
 	<div id="leftView" url="{% url 'webgateway.views.full_viewer' iid %}">
 		<div class="region region-content">
 			<div class="block">
