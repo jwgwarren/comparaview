@@ -45,7 +45,7 @@ $(document).ready(function()
 	<h1>blah {{ iid }}</h1>
 
 
- {% if ctrImgId.length==0 and expImgId.length==0 %}
+ {% if (ctrImgId|length==0 and expImgId|length==0) %}
  	<h1 class="title">No Images Selected - please select some experimental and/or control images to view.</h1>
  {% elsif ctrlImgId|length >0 and expImgId|length >0 %}
   <frameset cols="50%,50%">
