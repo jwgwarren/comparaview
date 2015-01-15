@@ -24,6 +24,13 @@ $(document).ready(function()
             var viewport2 = $.WeblitzViewport($("#expviewport"), "../../../webgateway" );
             viewport.load({{ iid }});
             viewport.setZoom(200);
+            
+            
+                var docHeight = $(document).height();
+                var div1Height = $('#contviewport').height();
+                var div2Height = docHeight - div1Height;
+                $('#expviewport').css('height', div2Height);
+           
 
     });
 
