@@ -47,14 +47,14 @@ $(document).ready(function()
 
  {% if not ctrImgId and not expImgId %}
  	<h1 class="title">No Images Selected - please select some experimental and/or control images to view.</h1>
- {% elif ctrlImgId.length >0 and expImgId.length >0 %}
+ {% elif ctrlImgId|length >0 and expImgId|length >0 %}
   <frameset cols="50%,50%">
 {% else %}
  <frameset cols="100%">
   
  {% endif %}
  
- {% if ctrImgId.length > 0 }">
+ {% if ctrImgId|length > 0 }">
  <frameset rows=85%,15%>
 <frame name="control" id="control" src="${impcMediaBaseUrl}/img_detail/${param['ctrImgId']}/" name="top">
 
@@ -62,7 +62,7 @@ $(document).ready(function()
 </frameset>
 {% endif %}
 
- {% if expImgId.length >0 %}">
+ {% if expImgId|length >0 %}">
 <frameset rows=85%,15%>
 <frame name="experimental" id="experimental" src="${impcMediaBaseUrl}/img_detail/${param['expImgId']}/" name="top">
 <frame name="expControl" id="expControl" src="imageNavigator?controlOrExp=experimental"></frame>
