@@ -17,7 +17,11 @@
 $(document).ready(function()
         {
 	//http://wwwdev.ebi.ac.uk/mi/media/omero/webgateway/
-            var viewport = $.WeblitzViewport($("#viewport"), "../../../webgateway" );
+            var viewport = $.WeblitzViewport($("#contviewport"), "../../../webgateway" );
+            viewport.load({{ iid }});
+            viewport.setZoom(200);
+            
+            var viewport2 = $.WeblitzViewport($("#expviewport"), "../../../webgateway" );
             viewport.load({{ iid }});
             viewport.setZoom(200);
 
@@ -29,9 +33,10 @@ $(document).ready(function()
 <body>
 	<h1>blah {{ iid }}</h1>
 	
-	<div class="miniview" id="viewport"></div>
+	<div class="miniview" id="contviewport"></div>
+	<div class="miniview" id="expviewport"></div>
 	
-	<div id="leftView" url="{% url 'webgateway.views.full_viewer' iid %}">
+	<!-- <div id="leftView" url="{% url 'webgateway.views.full_viewer' iid %}">
 		<div class="region region-content">
 			<div class="block">
 				<div class="content">
@@ -65,6 +70,6 @@ $(document).ready(function()
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 </body>
 </html>
