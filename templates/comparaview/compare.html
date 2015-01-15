@@ -33,11 +33,26 @@ $(document).ready(function()
 <body>
 	<h1>blah {{ iid }}</h1>
 	
-	<div class="miniview" id="contviewport"></div>
-	<div class="miniview" id="expviewport"></div>
+	 
+		<div class="region region-content">
+		<div class="miniview" id="contviewport"></div>
+			<div class="block">
+				<div class="content">
+					<div class="section">
+
+						<div class="caption">
+							<div class="btn" id="prev">< < Previous</div>
+							<div class="btn" id="next">Next > ></div>
+							<div id="annotations" name="annotations"></div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
 	
-	<!-- <div id="leftView" url="{% url 'webgateway.views.full_viewer' iid %}">
 		<div class="region region-content">
+		<div class="miniview" id="expviewport"></div>
 			<div class="block">
 				<div class="content">
 					<div class="section">
@@ -52,24 +67,6 @@ $(document).ready(function()
 				</div>
 			</div>
 		</div>
-	</div>
 
-	<div id="rightView" url="{% url 'webgateway.views.full_viewer' iid %}">
-		<div class="region region-content">
-			<div class="block">
-				<div class="content">
-					<div class="section">
-
-						<div class="caption">
-							<div class="btn" id="prev">< < Previous</div>
-							<div class="btn" id="next">Next > ></div>
-							<div id="annotations" name="annotations"></div>
-						</div>
-
-					</div>
-				</div>
-			</div>
-		</div>
-	</div> -->
 </body>
 </html>
