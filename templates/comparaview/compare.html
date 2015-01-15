@@ -16,8 +16,10 @@
 
 $(document).ready(function()
         {
+	//http://wwwdev.ebi.ac.uk/mi/media/omero/webgateway/
             var viewport = $.WeblitzViewport($("#viewport"), "http://wwwdev.ebi.ac.uk/mi/media/omero/webgateway/" );
             viewport.load({{ iid }});
+            viewport.setZoom(200);
 
     });
 
