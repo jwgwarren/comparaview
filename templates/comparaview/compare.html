@@ -26,10 +26,7 @@ $(document).ready(function()
             viewport.setZoom(200);
             
             
-                var docHeight = $(document).height();
-                var div1Height = $('#contviewport').height();
-                var div2Height = docHeight - div1Height;
-                $('#expviewport').css('height', div2Height);
+     
            
 
     });
@@ -40,9 +37,9 @@ $(document).ready(function()
 <body>
 	<h1>blah {{ iid }}</h1>
 	
-	 
-		<div class="region region-content">
-		<div class="miniview" id="contviewport"></div>
+	 <div id="wholeScreen">
+		<div class="region region-content" style="float:left; width:50%">
+		<div class="miniview" id="contviewport" ></div>
 			<div class="block">
 				<div class="content">
 					<div class="section">
@@ -58,7 +55,7 @@ $(document).ready(function()
 			</div>
 		</div>
 	
-		<div class="region region-content">
+		<div class="region region-content" style="float:right">
 		<div class="miniview" id="expviewport"></div>
 			<div class="block">
 				<div class="content">
@@ -74,6 +71,6 @@ $(document).ready(function()
 				</div>
 			</div>
 		</div>
-
+</div>
 </body>
 </html>
