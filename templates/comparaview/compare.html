@@ -36,10 +36,10 @@ $(document).ready(function()
 </head>
 <body>
 	<h1>blah {{ iid }}</h1>
-	
-	 <div id="wholeScreen">
-		<div class="region region-content" style="float:left; width:50%">
-		<div class="miniview" id="contviewport" ></div>
+
+	<div id="wholeScreen" style="width: 100%;">
+		<div style="float: left; width: 50%">
+			<div class="miniview" id="contviewport"></div>
 			<div class="block">
 				<div class="content">
 					<div class="section">
@@ -54,9 +54,9 @@ $(document).ready(function()
 				</div>
 			</div>
 		</div>
-	
-		<div class="region region-content" style="float:right">
-		<div class="miniview" id="expviewport"></div>
+
+		<div style="float: right;">
+			<div class="miniview" id="expviewport"></div>
 			<div class="block">
 				<div class="content">
 					<div class="section">
@@ -71,6 +71,7 @@ $(document).ready(function()
 				</div>
 			</div>
 		</div>
-</div>
+	</div>
+	<div style="clear:both"></div>
 </body>
 </html>
